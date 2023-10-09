@@ -4,7 +4,7 @@
   "description": "The Discord bot used by the GLUA Discord Server",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.ts",
+    "start": "node dist/app.js",
     "build": "tsc"
   },
   "author": "",
