@@ -1,12 +1,7 @@
-import { Client } from "discord.js";
-import 'dotenv/config'
+import dotenv from "dotenv";
+dotenv.config();
 
-console.log("Bot is starting...");
-
-const client = new Client({
-    intents: []
-});
-
-client.login(process.env.DISCORD_TOKEN);
-
-console.log(client);
+import { TuxClient } from "./discord/TuxClient";
+const discordToken = process.env.DISCORD_TOKEN;
+if (!discordToken) throw new Error("No Discord token provided.");
+new TuxClient().run(discordToken);
