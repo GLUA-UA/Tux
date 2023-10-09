@@ -1,11 +1,11 @@
 {
   "name": "tux",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The Discord bot used by the GLUA Discord Server",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "ts-node src/bot.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/app.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
