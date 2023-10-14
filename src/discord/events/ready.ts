@@ -26,6 +26,7 @@ export async function run(client: Client) {
     Logger.debug(GLUA_CNT_STRING.replace("{n}", `${gluaMembers}`));
     c.setName(GLUA_CNT_STRING.replace("{n}", `${gluaMembers}`));
 
+
     const c1 = await guild.channels.fetch(MEMBER_CNT_CHANNEL);
 
     if (c1 == null) return;

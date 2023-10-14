@@ -8,6 +8,7 @@ const MEMBER_CNT_STRING: string = process.env.MEMBER_CNT_STRING ?? "";
 
 export async function run(client: Client, member: GuildMember) {
     updateMemberCount(member);
+
     giveAutoRole(member);
 }
 
