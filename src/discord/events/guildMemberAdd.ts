@@ -2,6 +2,7 @@ import { Client, GuildBasedChannel, GuildMember, Role } from "discord.js";
 import Logger from "../../Logger";
 
 const MEMBER_CNT_CHANNEL: string = process.env.MEMBER_CNT_CHANNEL ?? "";
+const AUTO_ROLE: string = process.env.AUTO_ROLE ?? "";
 
 var last_sync = 0;
 
@@ -14,6 +15,10 @@ export async function run(client: Client, member: GuildMember) {
     const c = await member.guild.channels.fetch(MEMBER_CNT_CHANNEL);
 
     if (c == null) return;
+
+    if (AUTO_ROLE == "") return;
+
+    member.roles.add(await member.guild.roles.fetch(AUTO_ROLE)??"")
 
     Logger.debug(`Membros: ${humanMembers}`);
     c.setName(`Membros: ${humanMembers}`);
