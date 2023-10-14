@@ -16,7 +16,7 @@ export async function run(client: Client, before: GuildMember, after: GuildMembe
         return;
     }
     if (GLUA_CNT_CHANNEL == "") {
-        Logger.error("GLUA role not found");
+        Logger.error("GLUA member counting channel not found");
         return;
     }
 

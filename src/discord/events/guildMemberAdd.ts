@@ -14,10 +14,10 @@ export async function run(client: Client, member: GuildMember) {
 
     if (c == null) return;
 
+    Logger.debug(`Membros: ${humanMembers}`);
+    c.setName(`Membros: ${humanMembers}`);
+
     if (AUTO_ROLE == "") return;
 
     member.roles.add(await member.guild.roles.fetch(AUTO_ROLE)??"")
-
-    Logger.debug(`Membros: ${humanMembers}`);
-    c.setName(`Membros: ${humanMembers}`);
 }
