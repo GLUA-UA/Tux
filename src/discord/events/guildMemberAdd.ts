@@ -4,8 +4,6 @@ import Logger from "../../Logger";
 const MEMBER_CNT_CHANNEL: string = process.env.MEMBER_CNT_CHANNEL ?? "";
 const AUTO_ROLE: string = process.env.AUTO_ROLE ?? "";
 
-var last_sync = 0;
-
 export async function run(client: Client, member: GuildMember) {
     const members = await member.guild?.members.fetch();
     const humanMembers = members?.filter((m: GuildMember) => !m.user.bot).size;

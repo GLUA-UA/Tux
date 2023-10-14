@@ -20,9 +20,9 @@ export async function run(client: Client, before: GuildMember, after: GuildMembe
         return;
     }
 
-    const update_glua_membership = !hasRole(before, GLUA_ROLE) && hasRole(after, GLUA_ROLE) ||
+    const updateGluaMembership = !hasRole(before, GLUA_ROLE) && hasRole(after, GLUA_ROLE) ||
         hasRole(before, GLUA_ROLE) && !hasRole(after, GLUA_ROLE);
-    if (!update_glua_membership) {
+    if (!updateGluaMembership) {
         Logger.debug(`${after.displayName} did not join or leave GLUA`);
         return;
     }
