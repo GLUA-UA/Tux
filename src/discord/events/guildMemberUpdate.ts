@@ -3,6 +3,8 @@ import Logger from "../../Logger";
 
 const GLUA_ROLE: string = process.env.GLUA_ROLE ?? "";
 const GLUA_CNT_CHANNEL: string = process.env.GLUA_CNT_CHANNEL ?? "";
+const GLUA_CNT_STRING: string = process.env.GLUA_CNT_STRING ?? "";
+const MEMBER_CNT_STRING: string = process.env.MEMBER_CNT_STRING ?? "";
 
 function hasRole(member: GuildMember, roleId: string): boolean {
     return member.roles.cache
@@ -37,6 +39,6 @@ export async function run(client: Client, before: GuildMember, after: GuildMembe
 
     if(c == null) return;
         
-    Logger.debug(`GLUA: ${gluaMembers}`);
-    c.setName(`GLUA: ${gluaMembers}`);
+    Logger.debug(GLUA_CNT_STRING.replace("{n}", `${gluaMembers}`));
+    c.setName(GLUA_CNT_STRING.replace("{n}", `${gluaMembers}`));
 }
