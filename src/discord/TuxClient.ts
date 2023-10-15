@@ -5,7 +5,7 @@ import Logger from "../Logger";
 export class TuxClient {
     private client: Client;
 
-    constructor(clientOptions: ClientOptions = { intents: ["Guilds"] }) {
+    constructor(clientOptions: ClientOptions = { intents: ["Guilds", "GuildMembers"] }) {
         this.client = new Client(clientOptions);
     }
 
