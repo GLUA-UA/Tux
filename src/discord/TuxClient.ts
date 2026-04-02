@@ -1,6 +1,7 @@
 import { readdirSync } from "fs";
 import { Client, ClientOptions } from "discord.js";
 import Logger from "../Logger";
+import CommandRegistry from "./registry/CommandRegistry";
 
 export class TuxClient {
     private client: Client;
@@ -12,6 +13,7 @@ export class TuxClient {
     public async run(token: string) {
         await this.registerEvents();
         this.login(token);
+        CommandRegistry.registerCommands();
     }
 
     private async registerEvents() {
